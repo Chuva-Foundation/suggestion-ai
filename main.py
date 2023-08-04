@@ -2,18 +2,16 @@ import os
 import sys
 
 import openai
-from langchain.chains import ConversationalRetrievalChain, RetrievalQA
+from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
-from langchain.document_loaders import DirectoryLoader, TextLoader, PyPDFLoader
+from langchain.document_loaders import PyPDFLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.indexes.vectorstore import VectorStoreIndexWrapper
 from dotenv import load_dotenv, find_dotenv
 from langchain.vectorstores import Chroma
 
-# import constants
-
-_ = load_dotenv(find_dotenv()) # read local .env file
+load_dotenv(find_dotenv()) # read local .env file
 
 openai.api_key = os.environ['OPENAI_API_KEY']
 
